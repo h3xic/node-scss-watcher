@@ -1,0 +1,11 @@
+{
+	"name": "scss_watcher",
+	"version": "0.0.1",
+	"private": false,
+	"scripts": {
+		"start": "node demo"
+	},
+	"dependencies": {
+		"lodash" : "*"
+	}
+}

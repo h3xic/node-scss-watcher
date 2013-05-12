@@ -1,0 +1,52 @@
+
+@mixin sass-box-sizing($type:"border") {
+	/* Acceptable values are border, content, and padding - content is the default W3C model */ 
+	box-sizing: #{$type}-box;
+	-webkit-box-sizing: #{$type}-box;
+	-moz-box-sizing: #{$type}-box;
+}
+
+
+@function black($opacity) {
+	@return rgba(0, 0, 0, $opacity); //0.301961
+}
+
+@function white($opacity) {
+	@return rgba(255, 255, 255, $opacity);
+}
+
+
+@mixin hide-text{
+	font: 0/0 a;
+	text-shadow: none;
+	color: transparent;
+}
+
+
+@mixin navigation-list {
+	list-style-type:none;
+	padding:0;
+	margin:0;
+	overflow:hidden;
+	> li {
+		display:block;
+		float:left;
+		&:last-child {
+			margin-right:0px;
+		}
+	}
+}
+
+@mixin background-grad($startColor, $endColor) {
+	background: $startColor;
+	background-color: $startColor;
+	background: -webkit-gradient(linear, left top, left bottom, from($startColor), to($endColor));
+	background: -webkit-linear-gradient(top, $startColor, $endColor);
+	background: -moz-linear-gradient(top, $startColor, $endColor);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$startColor}', endColorstr='#{$endColor}');
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient( startColorstr=#{$startColor}, endColorstr=#{$endColor} )";
+	background: -ms-linear-gradient(top, $startColor, $endColor);
+	background: -o-linear-gradient(top, $startColor, $endColor);
+	background: linear-gradient(top, $startColor, $endColor);
+}
+
